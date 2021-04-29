@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const inquirer = require('inquirer');
+const consoleTable = require('console.table');
 
 // Import the connection object
 const sequelize = require('./connection.js');
@@ -15,5 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 sequelize.sync().then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
 
 
